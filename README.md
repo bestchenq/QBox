@@ -8,16 +8,17 @@
 
 小秋魔盒（QBox）是一个生活工具 Android App，由 OCN.Yang 开发，第一个版本上线时间：2017.04.11  
 
-一款简约纯净有爱的生活工具类App。  
+A life tool App: simple and beautiful, pure, love.(Welcome to **Star** and **Fork**)  
 
-[![Version Code](https://img.shields.io/badge/Version%20Code-4-brightgreen.svg)](https://github.com/OCNYang/QBox)  
-[![Version Name](https://img.shields.io/badge/Version%20Name-v1.6%20%E6%AD%A3%E5%BC%8F%E7%89%88-blue.svg)](https://github.com/OCNYang/QBox)  
+[![Release version](https://img.shields.io/badge/Release%20Version-v1.6%20%E6%AD%A3%E5%BC%8F%E7%89%88-blue.svg)](https://github.com/OCNYang/QBox/releases/tag/1.6)  
+[![Current version](https://img.shields.io/badge/Current%20Version-v2.0%20测试版-brightgreen.svg)](https://github.com/OCNYang/QBox)  
 
-下载地址：  
+#### 下载地址 | APK Download：
+
 **地址一：**[http://fir.im/qbox](http://fir.im/qbox)  
 **地址二：**[https://raw.githubusercontent.com/OCNYang/QBox/master/apk/QBox.apk](https://raw.githubusercontent.com/OCNYang/QBox/master/apk/QBox.apk)  
 
-## 应用预览  
+## 应用预览 | UI
 
 > 图片依次是（多动图，加载较慢，图片不显示刷新页面）：  
 > 1.新闻模块(**如果你下载的 apk 没有显示新闻模块，开启方式：设置页长按头部直至出现提醒 > 设置页长按底部直至出现提醒 > 退出重启应用**)  
@@ -41,11 +42,9 @@
 ![拖曳](http://obbu6r1mi.bkt.clouddn.com/qbox/recy_yidong.gif?imageView2/2/w/405/q/95)
 ![搜索框](http://obbu6r1mi.bkt.clouddn.com/qbox/searchLayout.gif?imageView2/2/w/405/q/95)
 
-## 源码开放声明  
+## Wiki (集成说明)
 
-本项目在开发过程中是存放在私有仓库的，为了开放我把原仓库的代码转移到这里，同时因为个人是业余时间随意开发的，所以代码风格写得很随意，同时在开发过程中也有很多冗余 代码/文件/资源 等，我已经把放在这个仓库的代码尽量的做了梳理（原仓库还是很乱~~哈~哈）。   
-
-后续这个项目还会继续维护和迭代，但个人代码提交仍然会提交到原私有仓库，（当后续有重大模块更新，我仍会更新到这里），所以平常可能大家看不到更新记录，这点望大家知道。
+**[Document | 说明文档](https://github.com/OCNYang/QBox/wiki)** (也可直接查看下面)  
 
 ## 本应用集成的各开源库或控件的说明
 
@@ -549,12 +548,22 @@ DayNightActivity的例子的方式是在设置页的的代码方式。
 一种是在每个主导航页中设置监听，点击一次没反应，连点击两次退出程序。  
 另外一种：点击一次返回到main主导航页面，在main页面点击一次直接退出程序（这也是知乎实现的方式，同时因为在main页面点击一次就直接退出了，所以在其他主导航页面如果连续点击两次也能达到直接退出程序的效果。）
 
-## 更多地方找到本文   
+## 开源说明  
 
-[![简书](https://img.shields.io/badge/%E7%AE%80%E4%B9%A6-http%3A%2F%2Fwww.jianshu.com%2Fp%2F3442a0b2eee1-blue.svg?style=social)](http://www.jianshu.com/p/3442a0b2eee1)  
+本应用是上线应用，在上线之初并未开源，应许多用户和开发者朋友的呼吁后在 GitHub 上开源，因本应用本身就是我个人开发也并无商业性质，为了大家学习和参考应用内各功能的具体实现方式就毫无保留的开源给大家。  
+因最近为修复部分 bug 在应用市场提交更新版本时，收到了应用市场平台“此APP已被打入盗版库，不予重复更新上传”的通知拒绝更新（想象可能是有人修改此源码重复提交应用上线了）。同时也有部分朋友询问此项目采用的开源协议。基于上面这些情况在这着重强调一下开源说明：  
+
+1. 本应用的开源源码大家都可以随意复制传播、Fork，大家对应用内各功能的实现源码可以学习参考；
+2. 《小秋魔盒》是上线应用，自第一个版本上线之时，就关于本应用的所有权、知识产权、侵权申明的相关信息在应用的 “设置” > “声明” 页面有明确详细说明；
+3. 本应用目前不采用任何开源协议，我个人保留本应用的所有权利； 
+4. 本应用不允许任何人对源码再整体封装、或修改部分代码或变异改编再次提交上线或使用等，严禁使用到商业目的用途、毕业论文、其他形式的使用等。
+
+## 应用详细说明   
+
+[![CSDN](https://img.shields.io/badge/CSDN-http://blog.csdn.net/shedoor-blue.svg?style=social)](http://blog.csdn.net/shedoor)  
 [![掘金](https://img.shields.io/badge/%E6%8E%98%E9%87%91-https%3A%2F%2Fjuejin.im%2Fuser%2F593a09f9fe88c2006a0034ea-red.svg?style=social)](https://juejin.im/user/593a09f9fe88c2006a0034ea)  
 
 <br>
-<br>
 
-[![ocnyang.com](https://img.shields.io/badge/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-www.ocnyang.com-lightgrey.svg?style=flat-square)](http://ocnyang.com/)&ensp;&ensp;[![新浪微博](https://img.shields.io/badge/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A-%E6%AC%A7%E6%AC%A7%E5%BF%83%E5%BF%83-red.svg?style=flat-square)](http://weibo.com/shedoor/)
+
+[![ocnyang.com](https://img.shields.io/badge/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-www.ocnyang.com-lightgrey.svg?style=flat-square)](http://ocnyang.com/)&ensp;&ensp;[![新浪微博](https://img.shields.io/badge/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A-欧神杨-red.svg?style=flat-square)](http://weibo.com/ocnyang/)

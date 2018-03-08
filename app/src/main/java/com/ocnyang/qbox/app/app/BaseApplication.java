@@ -100,7 +100,6 @@ public class BaseApplication extends Application {
         if (sHandler == null) {
             sHandler = new DemoHandler(getApplicationContext());
         }
-
     }
 
     private boolean shouldInit() {
@@ -226,7 +225,6 @@ public class BaseApplication extends Application {
                                 SPUtils.put(context,Const.OPENNEWS,"magicopen");
                                 break;
                             default:
-
                                 break;
                         }
                     }

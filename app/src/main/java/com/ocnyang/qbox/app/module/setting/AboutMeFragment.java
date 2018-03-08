@@ -1,16 +1,20 @@
 package com.ocnyang.qbox.app.module.setting;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ocnyang.qbox.app.R;
 import com.ocnyang.qbox.app.base.BaseFragment;
+import com.ocnyang.qbox.app.utils.SaveImageUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 
 /*******************************************************************
  *    * * * *   * * * *   *     *       Created by OCN.Yang
@@ -31,6 +35,12 @@ public class AboutMeFragment extends BaseFragment {
     TextView mMyGithub;
     @BindView(R.id.my_sinaweibo)
     TextView mMySinaweibo;
+    @BindView(R.id.wechat_aboutme)
+    View mWechat_aboutme;
+    @BindView(R.id.weibo_aboutme)
+    View mWeibo_aboutme;
+    @BindView(R.id.alipay_aboutme)
+    View mAlipay_aboutme;
 
     public AboutMeFragment() {
     }
@@ -93,9 +103,31 @@ public class AboutMeFragment extends BaseFragment {
                 openchrome(mMyGithub.getText().toString());
                 break;
             case R.id.my_sinaweibo:
-                openchrome("http://weibo.com/shedoor");
+                openchrome("http://weibo.com/ocnyang");
                 break;
         }
+    }
+
+    @OnLongClick({R.id.alipay_aboutme,R.id.weibo_aboutme,R.id.wechat_aboutme})
+    public boolean onLongClick(View v) {
+        boolean flag = false;
+        switch (v.getId()){
+            case R.id.weibo_aboutme:
+                flag = SaveImageUtils.saveImageToGallery(getContext().getApplicationContext(), BitmapFactory.decodeResource(getResources(),R.drawable.ocnyang_sinaweibo));
+                break;
+            case R.id.alipay_aboutme:
+                flag = SaveImageUtils.saveImageToGallery(getContext().getApplicationContext(),BitmapFactory.decodeResource(getResources(),R.drawable.ocnyang_zfb));
+                break;
+            case R.id.wechat_aboutme:
+                flag = SaveImageUtils.saveImageToGallery(getContext().getApplicationContext(),BitmapFactory.decodeResource(getResources(),R.drawable.ocnyang_wechat));
+                break;
+        }
+        if (flag){
+            Toast.makeText(getContext(), "保存成功，请到图库中查看！", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), "保存失败，请重新保存！", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
     @Override

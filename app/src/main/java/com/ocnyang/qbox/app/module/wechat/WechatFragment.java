@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -37,7 +38,6 @@ import rx.schedulers.Schedulers;
 public class WechatFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    public static final String WECHAT_APPKEY = "26ce25ffcfc907a26263e2b0e3e23676";
     //每页请求的 item 数量
     public final int mPs = 21;
     public int mPageMark = 1;
@@ -133,7 +133,6 @@ public class WechatFragment extends BaseFragment implements SwipeRefreshLayout.O
         });
     }
 
-
     private void initSwipeRefresh() {
         mSwiperWechat.setOnRefreshListener(this);
         mSwiperWechat.setColorSchemeColors(Color.rgb(47, 223, 189));
@@ -146,7 +145,6 @@ public class WechatFragment extends BaseFragment implements SwipeRefreshLayout.O
         mRefreshMark = true;
         mPageMark = 1;
         requestData();
-
     }
 
     private void initEmptyView() {
@@ -222,15 +220,14 @@ public class WechatFragment extends BaseFragment implements SwipeRefreshLayout.O
     private void requestData() {
         unsubscribe();
         mSubscription = Network.getWechatApi()
-                .getWechat(WECHAT_APPKEY, mPageMark, mPs)//key,页码,每页条数
+                .getWechat("8", mPageMark, mPs)//key,页码,每页条数
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(mObserver);
     }
 
-
     private void setNewDataAddList(WechatItem wechatItem) {
-        if (wechatItem != null && wechatItem.getError_code() == 0) {
+        if (wechatItem != null && "200".equals(wechatItem.getRetCode())) {
             mPageMark++;
             List<WechatItem.ResultBean.ListBean> newData = wechatItem.getResult().getList();
             WechatItem.ResultBean.ListBean listBean = newData.get(0);
